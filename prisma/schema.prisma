@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  password      String
+  name          String
+  rides         Ride[]         @relation("CreatedRides")
+  subscriptions Subscription[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Ride {
+  id                      String         @id @default(uuid())
+  name                    String
+  start_date              DateTime
+  start_date_registration DateTime
+  end_date_registration   DateTime
+  additional_information  String?        @db.Text
+  start_place             String
+  participants_limit      Int?
+  creatorId               String
+  creator                 User           @relation("CreatedRides", fields: [creatorId], references: [id])
+  subscriptions           Subscription[]
+  createdAt               DateTime       @default(now())
+  updatedAt               DateTime       @updatedAt
+}
+
+model Subscription {
+  id                String   @id @default(uuid())
+  ride              Ride     @relation(fields: [rideId], references: [id])
+  rideId            String
+  user              User     @relation(fields: [userId], references: [id])
+  userId            String
+  subscription_date DateTime @default(now())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([rideId, userId], name: "unique_subscription_per_user_per_ride")
+}
