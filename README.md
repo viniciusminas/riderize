@@ -31,7 +31,7 @@ API GraphQL desenvolvida como parte do desafio de backend da Riderize, para gere
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/viniciusminas/riderize.git
+   git clone https://github.com/viniciusminas/riderize
    cd riderize
    ```
 
