@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Arg, Ctx, Authorized } from "type-graphql";
 import { Subscription as PrismaSubscription } from "@prisma/client";
-import { MyContext } from "../utils/types"; // Caminho relativo correto
+import { MyContext } from "../utils/types"; 
 import { SubscriptionType } from "../schema/subscription";
 import { IsUUID } from "class-validator";
 import { InputType, Field } from "type-graphql";

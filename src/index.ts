@@ -17,14 +17,13 @@ async function startServer() {
   const prisma = new PrismaClient();
 
 
-  // Construa o schema com todos os resolvers
   const schema = await buildSchema({
     resolvers: [
       UserResolver,
       RideResolver,
       SubscriptionResolver
     ],
-    authChecker: () => true, // Ignora autenticação
+    authChecker: () => true,
     validate: false
   });
 

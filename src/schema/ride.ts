@@ -1,9 +1,11 @@
-import { ObjectType, Field, Int } from "type-graphql";
+import { ObjectType, Field, Int, ID } from "type-graphql";
+import { UserType } from "./user";          
+import { SubscriptionType } from "./subscription"; 
 
 @ObjectType()
 export class RideType {
-  @Field(() => Int)
-  id!: number;
+  @Field(() => ID)
+  id!: string;
 
   @Field()
   name!: string;
@@ -25,4 +27,10 @@ export class RideType {
 
   @Field({ nullable: true })
   participants_limit?: number;
+
+  @Field(() => UserType)      
+  creator!: UserType;
+
+  @Field(() => [SubscriptionType], { nullable: true })  
+  subscriptions?: SubscriptionType[];
 }

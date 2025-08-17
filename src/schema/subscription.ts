@@ -1,16 +1,16 @@
-import { ObjectType, Field, Int } from "type-graphql";
+import { ObjectType, Field, Int, ID } from "type-graphql";
 import { RideType } from "./ride";
 
 @ObjectType()
 export class SubscriptionType {
-  @Field(() => Int)
-  id!: number;
+  @Field(() => ID)
+  id!: String;
 
-  @Field(() => Int)
-  rideId!: number;
+  @Field(() => ID)
+  rideId!: String;
 
-  @Field(() => Int)
-  userId!: number;
+  @Field(() => ID)
+  userId!: String;
 
   @Field()
   subscription_date!: Date;

@@ -1,0 +1,31 @@
+version: '3.8'
+
+
+services:
+  db:
+    image: postgres:13-alpine 
+    container_name: riderize-db
+    restart: always 
+    environment:
+      POSTGRES_USER: riderize_user
+      POSTGRES_PASSWORD: riderize_password
+      POSTGRES_DB: riderize_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: . 
+    container_name: riderize-api
+    restart: always
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db 
+    environment:
+      DATABASE_URL: "postgresql://riderize_user:riderize_password@db:5432/riderize_db?schema=public"
+      JWT_SECRET: "seu-segredo-super-secreto-aqui" 
+
+volumes:
+  pgdata:
