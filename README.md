@@ -4,7 +4,7 @@ API GraphQL desenvolvida como parte do desafio de backend da Riderize, para gere
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Autenticação de usuários com JWT (Registro e Login)
 - Criação, listagem e gerenciamento de Pedais (Rides)
@@ -14,7 +14,7 @@ API GraphQL desenvolvida como parte do desafio de backend da Riderize, para gere
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Node.js
 - TypeScript
@@ -53,18 +53,3 @@ API GraphQL desenvolvida como parte do desafio de backend da Riderize, para gere
 
 5. **Pronto!**
    - A API estará rodando e acessível em `http://localhost:4000/graphql`.
-
----
-
---- 
-
-## 🌍 Deploy
-
-O projeto também está disponível em ambiente de produção no Railway:
-
-🔗 **GraphQL:** (https://riderize-production.up.railway.app/graphql)
-
-
-## 📬 Contato
-
-Vinícius Minas - viniciusminas_@hotmail.com - [LinkedIn](https://www.linkedin.com/in/vinicius-antonio-minas/)
