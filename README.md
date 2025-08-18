@@ -56,6 +56,15 @@ API GraphQL desenvolvida como parte do desafio de backend da Riderize, para gere
 
 ---
 
+--- 
+
+## 🌍 Deploy
+
+O projeto também está disponível em ambiente de produção no Railway:
+
+🔗 **GraphQL:** (https://riderize-production.up.railway.app/graphql)
+
+
 ## 📬 Contato
 
 Vinícius Minas - viniciusminas_@hotmail.com - [LinkedIn](https://www.linkedin.com/in/vinicius-antonio-minas/)
